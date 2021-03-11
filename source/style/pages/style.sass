@@ -1,0 +1,788 @@
+//fonts
+$main-font: 'PT Sans Caption', "PT Sans Caption", sans-serif
+$title-font: 'Open Sans', "Open Sans", sans-serif
+$info-font: 'PT Sans Caption', "PT Sans Caption", sans-serif
+// colors
+
+body
+    font-family: $main-font
+    padding-top: 136px
+.wrapper
+    max-width: 1110px
+    margin: 0 auto
+    width: 100%
+.header
+    position: fixed
+    z-index: 5
+    left: 0
+    right: 0
+    top: 0
+    background: #0C54A0
+    box-shadow: 0px 18px 28px rgba(9, 30, 66, 0.15)
+.header-top
+    padding: 18px 0
+    background: #F7F7F7
+    & > .wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+.adress
+    position: relative
+    display: flex
+    align-items: center
+    & p
+        margin: 0
+        font-size: 14px
+        line-height: 18px
+        color: #3D3D3D
+    & svg
+        margin-right: 7px
+    &:hover .adress__modal
+        opacity: 1
+        visibility: visible
+.adress-ico
+    margin-right: 6px
+    margin-left: 6px
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+.adress__modal
+    position: absolute
+    right: 0
+    width: 329px
+    top: 33px
+    background: $color-white
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25)
+    box-sizing: border-box
+    padding: 14px 5px
+    transition: all .4s ease-in-out
+    opacity: 0
+    visibility: hidden
+.email
+    display: flex
+    align-items: center
+    & a
+        text-decoration: none
+        font-size: 14px
+        line-height: 18px
+        color: #3D3D3D
+        transition: all .4s ease-in-out
+    & svg
+        margin-right: 7px
+    & path
+        transition: all .4s ease-in-out
+    &:hover a
+        color: #0C54A0
+    &:hover path
+        fill: #0C54A0
+.phone
+    display: flex
+    align-items: center
+    position: relative
+    &:hover > a
+        color: #0C54A0
+    &:hover > .contact-ico path
+        fill: #0C54A0
+    & a
+        text-decoration: none
+        color: #3D3D3D
+        font-size: 14px
+        line-height: 18px
+        transition: all .4s ease-in-out
+    & svg
+        margin-right: 7px
+        & path
+            transition: all .4s ease-in-out
+.contact-button
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 14px
+    line-height: 18px
+    font-weight: 700
+    color: #0C54A0
+    border-bottom: 1px dashed #0C54A0
+    transition: all .4s ease-in-out
+    &:hover
+        border-color: transparent
+.header-bottom
+    padding: 18px 0
+    & > .wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+.logo
+    display: flex
+    align-items: center
+    & a
+        text-decoration: none
+        font-size: 20px
+        line-height: 26px
+        letter-spacing: 2px
+        text-transform: uppercase
+        color: $color-white
+        font-family: $title-font
+.menu
+    & ul
+        display: flex
+        align-items: center
+        margin: 0
+        padding: 0
+        list-style: none
+        & li
+            padding: 0 0 0 60px
+            & a
+                text-decoration: none
+                display: block
+                font-size: 18px
+                line-height: 25px
+                position: relative
+                font-family: $title-font
+                color: $color-white
+                transition: all .4s ease-in-out
+                &::after
+                    content: ''
+                    position: absolute
+                    width: 0
+                    height: 2px
+                    background: $color-white
+                    bottom: -5px
+                    left: 0
+                    transition: all .4s ease-in-out
+                &:hover::after
+                    width: 100%
+        & ul
+            width: 260px
+            visibility: hidden
+            display: block
+            opacity: 0
+            position: absolute
+            top: 130%
+            right: 0
+            z-index: 2
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25)
+            border-radius: 2px
+            padding: 20px 0
+            background: $color-white
+            & li
+                position: relative
+                max-width: none
+                padding: 0 40px 0 40px
+            & a
+                border-top: 0 none
+                line-height: 150%
+                padding: 7px 0
+                font-size: 18px
+                line-height: 21px
+                color: #3D3D3D
+                font-weight: 700
+                &::after
+                    display: none
+.menu-additional
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    position: relative
+    &::before
+        display: inline-block
+        vertical-align: middle
+        line-height: 10px
+        content: '...'
+        color: $color-white
+        font-size: 50px
+        padding-bottom: 5px
+        position: relative
+        top: -10px
+        cursor: pointer
+        transition: all .4s ease-in-out
+    &:hover::before
+        color: #46A1CD
+    &:hover ul 
+        visibility: visible
+        transition: visibility 0s, opacity 0.3s linear
+        opacity: 1
+.slider
+    width: 100%
+    height: 510px
+    position: relative
+    & .slider__slide
+        width: 100%
+        height: 510px
+        background: url(../images/decor/banner.jpg) 50% 50% no-repeat
+        background-size: cover
+        & > .wrapper
+                height: 100%
+                display: flex
+                align-items: center
+    & .prev
+        position: absolute
+        z-index: 2
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+        width: 82px
+        height: 90px
+        background: #0A2732
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: all .4s ease-in-out
+        &::before
+            content: ''
+            position: absolute
+            height: 0
+            width: 0
+            border-left: 45px solid transparent
+            border-right: 45px solid transparent
+            border-bottom: 35px solid #0A2732
+            top: 27px
+            right: -62px
+            transform: rotate(90deg)
+            transition: all .4s ease-in-out
+        &:hover
+            background: #0C54A0
+        &:hover::before
+            border-bottom-color: #0C54A0
+    & .next
+        position: absolute
+        z-index: 2
+        top: 50%
+        transform: translateY(-50%)
+        right: 0
+        width: 82px
+        height: 90px
+        background: #0A2732
+        display: flex
+        align-items: center
+        justify-content: center
+        cursor: pointer
+        transition: all .4s ease-in-out
+        &::before
+            content: ''
+            position: absolute
+            height: 0
+            width: 0
+            border-left: 45px solid transparent
+            border-right: 45px solid transparent
+            border-bottom: 35px solid #0A2732
+            top: 27px
+            left: -62px
+            transform: rotate(-90deg)
+            transition: all .4s ease-in-out
+        &:hover
+            background: #0C54A0
+        &:hover::before
+            border-bottom-color: #0C54A0
+.slider__text
+    background: rgba(0, 25, 33, 0.8)
+    box-shadow: 0px 3px 5px rgba(9, 30, 66, 0.2)
+    box-sizing: border-box
+    max-width: 780px
+    padding: 73px 80px
+    & p
+        margin: 0
+        text-transform: uppercase
+        font-size: 34px
+        line-height: 46px
+        font-family: $title-font
+        color: $color-white
+.slick-dots
+    bottom: 30px
+    & li
+        width: 15px
+        height: 15px
+        margin: 0 15px
+        & button
+            padding: 0
+            width: 100%
+            height: 100%
+            &::before
+                content: ''
+                position: absolute
+                opacity: 1
+                border-radius: 50%
+                width: 100%
+                height: 100%
+                background: rgba(255, 255, 255, 0.5)
+                box-sizing: border-box
+                border: 4px solid rgba(255, 255, 255, 0)
+.slick-dots li.slick-active button:before
+    opacity: 1
+    background: #0A2732
+    border-color: #fff
+.slick-dotted.slick-slider
+    margin-bottom: 0
+.service
+    position: relative
+    &::before
+        position: absolute
+        content: ''
+        top: 0
+        right: 0
+        width: 599px
+        height: 571px
+        background: url(../images/decor/back-1.png) 50% 50% no-repeat
+        background-size: contain
+        z-index: -1
+    &::after
+        position: absolute
+        content: ''
+        bottom: 95px
+        left: 0
+        width: 291px
+        height: 225px
+        z-index: -1
+        background-size: contain
+        background: url(../images/decor/back-2.png) 50% 50% no-repeat
+.service__wrap
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+.service__item
+    margin: 0 3px 30px 3px
+    max-width: 350px
+    width: 100%
+    box-sizing: border-box
+    box-sizing: border-box
+    text-decoration: none
+    transition: all .4s ease-in-out
+    &:hover p
+        text-decoration: underline
+        color: #0C54A0
+.service__image
+    width: 100%
+    height: 280px
+    overflow: hidden
+    & img
+        height: 100%
+        display: block
+.service__text
+    width: 100%
+    min-height: 120px
+    box-sizing: border-box
+    background: url(../images/decor/text.jpg) 50% 50% no-repeat
+    background-size: cover
+    padding: 20px 15px
+    & p
+        margin: 0
+        text-align: center
+        font-size: 18px
+        line-height: 25px
+        font-family: $title-font
+        color: #000000
+        transition: all .4s ease-in-out
+.service__all
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+    width: 200px
+    height: 36px
+    border-radius: 2px
+    background: #46A1CD
+    font-size: 14px
+    line-height: 18px
+    text-transform: uppercase
+    font-weight: 700
+    color: #FFFFFF
+    text-decoration: none
+    transition: all .4s ease-in-out
+    &:hover
+        background: #00366F
+.about
+    padding: 50px 0
+    & h1
+        margin: 0
+        font-size: 34px
+        line-height: 46px
+        color: #3D3D3D
+        font-family: $title-font
+        padding-bottom: 20px
+    & h2
+        margin: 0
+        font-size: 28px
+        line-height: 38px
+        color: #3D3D3D
+        font-family: $title-font
+        padding-bottom: 20px
+    & h3
+        margin: 0
+        font-size: 24px
+        line-height: 32px
+        color: #3D3D3D
+        font-family: $title-font
+        padding-bottom: 20px
+    & p
+        margin: 0
+        font-size: 16px
+        line-height: 21px
+        color: #3D3D3D
+        padding-bottom: 35px
+    & img
+        width: 100%
+        display: block
+h2.title
+    margin: 0 0 40px 0
+    padding: 0 0 0 11px
+    font-size: 28px
+    line-height: 38px
+    color: #0C54A0
+    text-transform: uppercase
+    font-family: $title-font
+    position: relative
+    &::before
+        position: absolute
+        content: ''
+        height: 15px
+        width: 2px
+        background: #0C54A0
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+    &::after
+        position: absolute
+        content: ''
+        height: 1px
+        width: 100vw
+        background: rgba(214, 214, 214, 0.7)
+        right: 100%
+        top: 50%
+        transform: translateY(-50%)
+.footer
+    padding: 40px 0
+    background: #00366F url(../images/decor/footer.png) 50% 50% no-repeat
+    background-size: contain
+    margin-top: 50px
+.footer-top
+    z-index: 5
+    & > .wrapper
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+.footer-top__logo a
+    text-decoration: none
+    font-size: 20px
+    line-height: 26px
+    letter-spacing: 2px
+    text-transform: uppercase
+    color: #ffffff
+    font-family: $title-font
+.footer-top__adress
+    display: flex
+    align-items: center
+    max-width: 310px
+    position: relative
+    & .adress__modal p 
+        color: #3D3D3D
+    &:hover .adress__modal
+        opacity: 1
+        visibility: visible
+    & p
+        margin: 0
+        font-size: 14px
+        line-height: 18px
+        color: $color-white
+        font-family: $info-font
+.footer-top__arrow
+    display: flex
+    align-items: center
+.footer-top__icon
+    margin-right: 9px
+.footer-top__copyright
+    & p
+        margin: 0
+        font-size: 14px
+        line-height: 18px
+        color: $color-white
+        padding: 30px 0
+.footer-top__email
+    display: flex
+    align-items: center
+    & a
+        text-decoration: none
+        font-size: 14px
+        line-height: 18px
+        color: $color-white
+        &:hover
+            text-decoration: underline
+.footer-top__phones
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    & .contact-button
+        margin-top: 5px
+        color: #fff
+        border-color: #fff
+        &:hover
+            border-color: transparent
+.footer-top__arrow
+    margin: 0 8px
+.footer-top__phone
+    display: flex
+    align-items: center
+    & a
+        text-decoration: none
+        font-size: 14px
+        line-height: 18px
+        color: $color-white
+        &:hover
+            text-decoration: underline
+.footer-bottom
+    padding-top: 30px
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+    & > .wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+.footer-bottom__privacy
+    max-width: 620px
+    color: #fff
+    font-style: normal
+    font-weight: normal
+    font-size: 14px
+    line-height: 18px
+    & a 
+        color: #fff
+        text-decoration: none
+        font-size: 14px
+        line-height: 18px
+        &:hover
+            text-decoration: underline
+    & p
+        margin: 0
+        padding-top: 6px
+        font-size: 14px
+        line-height: 18px
+.kontur-copy
+    display: flex
+    align-items: center
+.kontur-copy__links
+    display: flex
+    flex-direction: column
+    margin-right: 14px
+    & a
+        text-decoration: none
+        font-size: 14px
+        line-height: 18px
+        color: $color-white
+        &:hover
+            text-decoration: underline
+.hamburger 
+    display: none
+    padding: 15px 15px
+    &:hover
+        cursor: pointer
+    &.is-active
+        & .hamburger__inner
+            transform: rotate(225deg)
+            transition-delay: 0.12s
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+            &::before
+                top: 0
+                opacity: 0
+                transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+            &::after
+                bottom: 0;
+                transform: rotate(-90deg);
+                transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+.hamburger__box
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    & .hamburger__inner
+        width: 100%
+        height: 4px
+        background-color: #ffffff
+        border-radius: 4px
+        position: absolute
+        display: block
+        top: 50%
+        margin-top: -2px
+        transition-property: transform
+        transition-duration: 0.15s
+        transition-timing-function: ease
+        &::before
+            content: ""
+            display: block
+            top: -10px
+            width: 100%
+            height: 4px
+            background-color: #ffffff
+            border-radius: 4px;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+            transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+        &::after
+            transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            bottom: -10px;
+            content: "";
+            display: block;
+            height: 4px;
+            width: 100%
+            background-color: #ffffff
+            border-radius: 4px;
+            position: absolute;
+            transition-property: transform;
+            transition-duration: 0.15s;
+            transition-timing-function: ease;
+.m-menu
+    background: $color-white
+    z-index: 12
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.25)
+    width: 80%;
+    height: 100%
+    min-width: 240px;
+    max-width: 440px;
+    position: fixed;
+    left: auto;
+    right: 0;
+    top: 0
+    display: flex
+    flex-direction: column
+    box-sizing: border-box
+    -webkit-transition: -webkit-transform .4s ease;
+    transition: -webkit-transform .4s ease;
+    -o-transition: transform .4s ease;
+    transition: transform .4s ease;
+    transition: transform .4s ease,-webkit-transform .4s ease;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    &.mm-wrapper_opening
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+.mm-navbar
+    height: 60px
+    padding: 5px 40px
+    border: none
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    background: #0C54A0
+.m-logo
+    flex: 0 0 auto
+.mm-listview
+    padding: 0 40px 0 20px;
+    list-style: none
+    margin: 0
+    flex: 1 0 auto
+    overflow-y: auto
+.mm-listitem
+    position: relative
+    &::after
+        content: '';
+        border-color: inherit;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        display: block;
+        position: absolute;
+        left: 20px;
+        right: 0;
+        bottom: 0;
+    &.active a
+        color: #0C54A0
+    & a
+        display: block
+        padding: 12px 10px 12px 20px
+        text-decoration: none
+        font-family: $title-font
+        font-weight: 800
+        color: #000000
+        font-size: 14px
+        line-height: 1.5
+        transition: all .4s ease-in-out
+        &:hover
+            color: #0C54A0
+.mm-navbars_bottom
+    border-top-style: solid
+    border-top-width: 1px
+    padding: 12px 0 12px 40px
+@media(max-width: 1200px)
+    .menu
+        display: none
+    .hamburger 
+        display: block
+    .slider .prev
+        width: 42px
+        height: 45px
+        & svg
+            width: 12px
+        &::before
+            border-left: 22px solid transparent
+            border-right: 22px solid transparent
+            border-bottom: 18px solid #0A2732
+            right: -31px
+            top: 14px
+    .slider .next
+        width: 42px
+        height: 45px
+        & svg
+            width: 12px
+        &::before
+            border-left: 22px solid transparent
+            border-right: 22px solid transparent
+            border-bottom: 18px solid #0A2732
+            top: 14px
+            left: -31px
+@media(max-width: 991px)
+    .wrapper
+        max-width: 720px
+    .header .header-top__adress
+        display: none
+    .footer-top, .footer-bottom
+        & > .wrapper
+            flex-direction: column
+            align-items: flex-start
+    .footer-top__logo, .footer-top__social, .footer-top__adress, .footer-top__email
+        margin-bottom: 18px;
+    .footer-top__copyright p
+        padding: 18px 0
+    .footer-bottom__made
+        padding-top: 15px
+@media(max-width: 768px)
+    body
+        padding-top: 60px
+    .wrapper
+        max-width: 540px
+    .header-top
+        display: none
+    .header-bottom
+        padding: 5px 0
+    .hamburger__box
+        width: 20px
+        height: 17px
+        &  .hamburger__inner
+            height: 3px
+            &:before
+                height: 3px
+                top: -6px
+            &:after
+                height: 3px
+                bottom: -6px
+    .slider
+        height: 300px
+        & .slider__slide
+            height: 300px
+    .slider__text
+        padding: 30px 20px
+        & h1
+            font-size: 25px
+            line-height: 35px
+        & p
+            font-size: 16px
+            line-height: 19px
+@media (max-width: 576px)
+    .wrapper
+        max-width: 100%
+        box-sizing: border-box
+        padding-left: 15px
+        padding-right: 15px
+    .slider__text
+        max-width: 235px
+        margin: 0 auto
+    .slick-dots
+        bottom: 15px
